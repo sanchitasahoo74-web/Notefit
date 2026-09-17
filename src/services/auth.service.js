@@ -1,5 +1,5 @@
-import userRepository from '../repositories/user.repository.js';
-import { hashPassword } from '../utils/hashingPassword.js';
+import userRepository from '../repositories/user.repostiory.js';
+import  hashPassword  from '../utils/hashingPassword.js';
 class AuthService {
   async register({ name, email, password }) {
     // check if user already exists
@@ -11,7 +11,7 @@ class AuthService {
     // hash the password
     const hashedPassword = await hashPassword(password);
     // create the user
-    const user = await userRepository.create({ name, email, password: hashedPassword });
+    const user = await userRepository.createUser({ name, email, password: hashedPassword });
 
     // return the user data without password
     return {

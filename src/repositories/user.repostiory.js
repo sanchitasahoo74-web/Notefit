@@ -1,24 +1,24 @@
-import user from '../models/user.model.js';
+import User from '../models/user.model.js';
 
 class UserRepository {
     async createUser(userData) {
-        return await user.create(userData);
+        return await User.create(userData);
    }
 
    async findByID(userId) {
-        return await user.findById(userId);
+        return await User.findById(userId);
    }
    async findByEmail(email) {
-        return await user.findOne({ email });
+        return await User.findOne({ email });
    }
 
    async existsByEmail(email) {
-    return await user.findone({ email });
+    return await User.findone({ email });
 }
 
 
 async existByEmail(email) {
-    return await user.exists({ email });     
+    return await User.exists({ email });     
 }
 
 
